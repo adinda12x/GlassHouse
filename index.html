@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veranda Kaca 3D — Glasshouse Rain & Dew</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Kanvas 3D Rumah Kaca -->
+    <div id="scene-holder"></div>
+
+    <!-- Layout Editorial Kaca -->
+    <div class="editorial-shell">
+        <!-- Baris Atas: Judul & Selector Cuaca -->
+        <header class="top-bar">
+            <div class="atelier-title">
+                <span class="leaf-mark"></span>
+                <div>
+                    <p class="eyebrow">ATELIER BOTANI</p>
+                    <h1>VERANDA KACA</h1>
+                </div>
+            </div>
+
+            <div class="weather-switcher" role="group" aria-label="Suasana Cuaca">
+                <button class="weather-pill active" data-weather="mist">Kabut Pagi</button>
+                <button class="weather-pill" data-weather="rain">Rintik Hujan</button>
+                <button class="weather-pill" data-weather="sun">Sinar Hangat</button>
+            </div>
+        </header>
+
+        <!-- Area Tengah: Ruang Bebas untuk Objek 3D di Kiri + Panel Katalog di Kanan -->
+        <main class="main-grid">
+            <div class="canvas-zone">
+                <span class="drag-hint">Seret untuk memutar • Gulir untuk zoom</span>
+            </div>
+
+            <aside class="specimen-drawer">
+                <div class="index-header">
+                    <span class="index-num" id="spec-index">01</span>
+                    <span class="index-total">/ 05 SPESIMEN</span>
+                </div>
+
+                <h2 id="spec-name">Pakis Embun Perak</h2>
+                <p class="spec-latin" id="spec-latin">Adiantum raddianum</p>
+                <p class="spec-note" id="spec-note">
+                    Helai daun halus yang menjuntai lembut ke tepi pot, menangkap uap embun pagi menjadi titik-titik cahaya putih bersih.
+                </p>
+
+                <div class="meta-list" id="spec-meta">
+                    <div class="meta-row">
+                        <span>Kelembapan</span>
+                        <strong>82% RH</strong>
+                    </div>
+                    <div class="meta-row">
+                        <span>Karakter Daun</span>
+                        <strong>Berbulu Halus & Berembun</strong>
+                    </div>
+                </div>
+
+                <!-- Navigasi Spesimen Bernomor -->
+                <div class="specimen-nav" id="specimen-nav">
+                    <button class="spec-btn active" data-plant="fern">01</button>
+                    <button class="spec-btn" data-plant="monstera">02</button>
+                    <button class="spec-btn" data-plant="orchid">03</button>
+                    <button class="spec-btn" data-plant="echeveria">04</button>
+                    <button class="spec-btn" data-plant="calathea">05</button>
+                </div>
+
+                <div class="drawer-actions">
+                    <button class="next-specimen-btn" onclick="cycleSpecimen()">Spesimen Berikutnya</button>
+                    <button class="mist-toggle-btn" id="toggle-breath">Napas Daun: Aktif</button>
+                </div>
+            </aside>
+        </main>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
